@@ -1,0 +1,126 @@
+
+.main-nav-toggle {
+    display: none;
+}
+
+    @media (max-width: 768px) {
+        .main-nav-toggle:checked ~ .main-header .main-header__main-nav-container{
+            display: none;
+        }
+    }
+
+
+.main-header__hamburger-button-container {
+    background-color: #A0C5D3;
+    padding: 1.8em 1em;
+    order: 4;
+
+    @media (min-width: 425px) {
+        display: block;
+        order: 4;
+    }
+}
+
+.hamburger-button {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    width: 1.5em;
+    height: 1.5em;
+    background-color: #264653;
+    border-radius: .2em;
+}
+
+.hamburger-button:hover {
+background-color: #1C333C;
+}
+
+.hamburger-button {
+    
+    &__top-bread {
+        display: block;
+        position: absolute;
+        width: 80%;
+        height: 10%;
+        top: 20%;
+        left: 10%;
+        border-radius: .1em;
+        background-color: #eee;
+        transition: all .3s;
+    }   
+
+    &__meat {
+        display: block;
+        position: absolute;
+        width: 80%;
+        height: 10%;
+        top: 50%;
+        left: 10%;
+        border-radius: .1em;
+        background-color: #eee;
+        transform: translateY(-50%);
+        transition: all .3s;
+    }
+
+    &__bottom-bread {
+        display: block;
+        position: absolute;
+        width: 80%;
+        height: 10%;
+        bottom: 20%;
+        left: 10%;
+        border-radius: .1em;
+        background-color: #eee;
+        transition: all .3s;
+    }
+}
+
+
+
+.search-button {
+    position: relative;
+    background: transparent;
+    border: none;
+    outline: none;
+    margin: -.5em;
+}
+
+.search-button-img {
+    position: absolute;
+    width: 1.2em;
+    margin: -.9em 0.1em 0 0;
+    object-fit: cover;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.search-button-img:hover {
+    transform: scale(1.08);
+}
+
+
+.main-header__cart-button-container {
+    background-color: #A0C5D3;
+    padding: 1.8em 1em;
+    // justify-self: flex-end;
+    order: 1;
+    // flex-grow: 1;
+}
+
+.cart-button-image {
+    display: block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    background-color: #A0C5D3;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.cart-button-image:hover {
+    transform: scale(1.05);
+}
+
+.cart-button-image:target {
+    background-color: #264653;
+}

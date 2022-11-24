@@ -1,0 +1,108 @@
+.cart-toy {
+    position: relative;
+
+    &__container{
+
+    @media (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem 0;
+        flex-wrap: wrap;
+        }
+    }
+    
+    &__close {
+        font-size: 1.4em;
+        color: #039382;
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        cursor: pointer;
+
+        &:hover {
+            color: #B9ECE6;
+        }
+
+        &:active {
+            transform: scale(1.2);
+            transition: transform 100ms;
+        }
+    }
+
+    &__title {
+        font-size: 1.5em;
+        font-weight: 800;
+        line-height: 1.2;
+        font-variant: small-caps;
+        letter-spacing: 2px;
+        color: #054d60;
+    }
+
+    &__price,
+    &__subtotal-price {
+        color: #252525;
+    }
+
+    &__subtotal-quote {
+        font-size: 1.2em;
+        font-weight: 800;
+        line-height: 1.2;
+        font-variant: small-caps;
+        letter-spacing: 2px;
+        color: #264653;
+    }
+
+    &__img-container {
+        overflow: hidden;
+    }
+
+    &__img {
+        position: relative;
+        margin: 2em 1.4em .5em 1.4em;
+        width: 10%;
+        flex-shrink: 1;
+        width: 8vh;
+
+        @media (min-width: 768px) {
+            width: 15vh;
+        }
+    }
+
+    &__id {
+        display: none;
+    }
+
+    &__btn {
+        background-color: #03b39e;
+        color: #fff;
+        border: none;
+        font-weight: bold;
+        padding: 5px 10px;
+        font-size: 1.2em;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            background-color: #27c9b6;
+        }
+        
+        &:active {
+            background-color: #B9ECE6;
+        }
+    }
+
+    &__quantity-input {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        border: none;
+    }
+
+    &__separator {
+        flex-basis: 100%;
+        border-bottom: 1px solid rgba(141, 68, 209, 0.802);
+        margin: 10px 0;
+    }
+}

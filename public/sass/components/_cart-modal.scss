@@ -1,0 +1,89 @@
+
+.cart-modal{
+    
+    &__back--visible {
+        background-color: hsla(0, 0%, 0%, 0.0);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -100;
+        display: block;
+    }
+
+    &__close {
+        position: absolute;
+        top: 2px;
+        right: 8px;
+        font-size: 2.2em;
+        color: #461276e6;
+        cursor: pointer;
+        z-index: 3;
+
+        &:hover {
+            color: #B9ECE6;
+        }
+    }
+
+    &__total {
+        font-size: 1.5em;
+        font-weight: 1000;
+        line-height: 1.2;
+        font-variant: small-caps;
+        letter-spacing: 2px;
+        color: #008f7e;
+
+        @media (min-width: 768px) {
+            font-size: 2.5em;
+        }
+    }
+
+    
+    &__price {
+        color: #252525;
+        @media (min-width: 768px) {
+            font-size: 2em;
+        }
+    }
+
+    &__content {
+    display: none;
+    background-color: #f7be8ff0;
+    position: absolute;
+    left: 6%;
+    top: 290%;
+    color: #000;
+    width: 90%;
+    z-index: 10;
+    border-radius: .8em;
+    padding: 30px;
+    overflow-y: auto;
+    max-height: 500px;
+    transition: 1s;
+
+    @media  (min-width:768px) {
+        top: 190%;
+        width: 60%;
+        left: 20%;
+        }   
+    
+    @media (min-height: 1024px) {
+        max-height: 1000px;
+        }
+
+    &--visible {
+        display: block;
+    }
+
+    &--transform-in {
+        transform: translateY(110%);
+        transition: transform .5s;
+    }
+
+    &--transform-out {
+        transform: translateY(-200px);
+        transition: transform .2s;
+    }
+}
+}

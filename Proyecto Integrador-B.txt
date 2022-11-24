@@ -1,0 +1,109 @@
+el nombre será Jugueteria Cósmica
+
+el logo lo hacemos con photoshop
+
+Se puede agregar un carrousel para que pasen imágenes de forma permanente, incluso algún video.
+
+las cards deben mostrar precio, cantidad, foto, título y una descripción breve.
+
+la estructura general hay que mantenerla, los elementos html con sus clases correspondientes como base, nosotros podemos adicionar lo que queramos. adicionar: spans, divs, contenedores por afuera, clases.
+
+en la pantalla principal por ahora solo va a haber cards con productos,
+en la de contactos como minimo ciertos campos,
+en nosotros es libre,
+en el pie de cada pagina tienen que estar nuestros datos.
+
+-----------
+2
+
+No se requiere usar node.js, es optativo (si tengo tiempo..)
+--
+
+
+1-debe accederse a cada una de las paginas recargando solo el elemento main, manteniendo en todo momento los elementos <header> y <footer> en el DOM sin recargarlos. 
+como? clase 55?
+
+-los href del main-nav en main.html los cambio por #inicio, #alta, #contacto y #nosotros.
+-
+
+
+2- la comunicacion con el servidor puede intercambiar datos de cualquier tipo: texto, html, json, binary, etc. en cualquier vista. Podran obtenerse datos del servidor de forma asincronica, no solo para las vistas principales, sino en cualquier momento donde se requiera. como? 
+---buscar como traer archivos con json placeholder.
+
+3-se usa Live Server o Node.js + Express como servidor web (solo uno). cual usan los demas? hay diferencias grandes? cual conviene?
+--vamos con node, clase 53 y express, clase 55.60. en este caso hay que eliminar la carpeta node modules.
+--live server, lo que usa igual es la conexion a traves de ajax con un servidor.
+
+4-Se debe utilizar fetch() con async/await para las conexiones asincronicas con el servidor.
+---clase 54? quiere decir que no usamos XmlHttpRequest ni tampoco try catch.
+
+5-Al navegar por el sitio la URL debe ir cambiando. Todas las URL visibles
+por el usuario deben ser amigables y al acceder directamente a una
+deberá mostrarse el contenido correspondiente. Idealmente destacar
+de alguna manera el vínculo correspondiente a la vista activa.
+---clase 55 express, min 60.
+
+-----Dia1
+
+6-Todas las acciones que vaya a realizar el usuario deben brindar algun tipo de feedback. 
+---esto ya lo hice en gran parte. revisar y agregar para los nuevos elementos. si hay tiempo agregar en los hover algun elemento span flotante en vez de solo un atributo
+
+7-Agregar a todos los elementos html un atributo title para que se entienda que va a pasar con cada boton.
+
+8-Quitar el hover de las resoluciones para celular. 
+
+
+Boton de carrito
+debe mostrar y ocultar de manera alternada un contenedor del tipo modal en el qque se verá el listado de productos que se hayan agregado al carrito.
+---es un div que aparece por delante y se oscurece la parte de atras.
+
+
+Carrito modal
+su diseño es libre, pero siempre debe estar por encima del resto de los elementos de la pagina de manera flotante.
+hay que hacer todo los que pide la consigna con js 
+
+clase 33 - delegacion de eventos, de todos los elementos que va a aparecer en el modal, no esta bueno que cada uno tenga un evento registrado, el .addEventListener no lo vamos a hacer con cada uno de los elementos (spa, div, button), pongo un solo evento en el contenedor y que ese contenedor con el evento e.target pregunte en donde estoy haciendo click para que reaccione en consecuencia.
+
+vistas individuales
+todas asíncronas como dijo antes. 
+clase 55
+
+----Dia 2
+
+Home
+Las cards deben ser generadas a partir de un array definido con js. es decir de forma programática y usando HANDLEBARS para su creación. 
+---ya no vamos a tener 15 o X elementos card hardcodeadas en el html, sino que ese contenedor va a estar vacío y en algun lugar con js un array que permita ser recorrido para ir volcando todas las cards.
+---con Handlebars podemos tener un archivito y ese archivo de handlebars puede tener un each (#each handlebars) que permitiria recorrer y generar muchos elementos, lo vimos en alguna clase.
+
+El boton de comprar debe agregar el producto seleccionado al carrito. 
+Y avisarle al usuario que se agregó ese producto al carrito!! Algo chiquitito no invasivo.
+
+Al suceder esto se adicionará este al carrito como uno nuevo, si no existía previamente.
+
+Al agregar al carrito más unidades del mismo producto, se
+deberá incrementar la cantidad de unidades dentro, sin repetir el producto,
+actualizando el subtotal y total.
+
+Deberá utilizarse delegacion de eventos, evitando que acda card tenga registrado un evento por separado, progamando solo a un contenedor para que reaccione cuando sea presionado o cuando corresponda, verificando sobre qué boton descendiente se hizo click, por ejemplo, y tomando las acciones que sean necesarias.
+
+---clase 33 - delegacion de eventos. los eventos se registran sobre el cards-container para esto..lo mismo que para el carrito modal.
+
+
+----- Dia 3
+
+
+Alta
+A las validaciones que ya tengo agregar:
+-Mostrar los errores si se eintenta envial el formulario y al menos un campo no cumple con los requisitos.
+-En dicho caso cada campo debera mostrar los errores correspondientes y el formulario no debera enviarse.
+-Solo permitir el envio de datos si todos los campos fueron validados exitosamente.
+-Informar al usuario que tipo de validaciones se estan realizando y las correcciones que debe realizar al completar el formulario.
+-para las edades agregar la checkbox de meses o años.
+-imágenes. permitir una sola porque mis cards solo tienen 1 sola(por ahora), y permitir solo archivos de imagenes, eso se hace con un atributo.
+
+Chequear el listado de validaciones solicitadas.
+
+
+
+-----Dia 4
+

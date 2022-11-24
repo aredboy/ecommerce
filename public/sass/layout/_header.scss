@@ -1,0 +1,235 @@
+
+.main-header {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    position: fixed;
+    z-index: 2;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.main-header__logo-container {
+    background-color: #A0C5D3;
+    padding-left: .5em;
+    padding: 0;
+    flex-basis: 30%;
+    flex-shrink: 1;
+}
+
+.logo {
+    width: 9em;
+    flex-shrink: 1;
+}
+
+.main-header__search-form-container {
+    background-color: #A0C5D3;
+    padding: 2em 0 .5em .3em;
+    justify-self: center;
+    align-items: center;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-shrink: 1;
+    transition: 1s;
+    order: 1;
+}
+
+#search-form {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    min-width: .5em;
+}
+
+
+.search-input-container {
+    box-sizing: border-box;
+    flex-shrink: 1;
+}
+
+.search-input {
+    flex-shrink: 1;
+    flex-basis: 50%;
+    min-width: none;
+    width: 80%;
+    height: 1.5em;
+    border-radius: 25px;
+    outline: 0;
+    border: 0;
+    padding: .5em;
+    font-size: .9em;
+    background-color: #ECF3F6;
+    transition: .3s;
+}
+
+.search-input:target {
+    border: 0;
+    appearance: none;
+    outline: 0;
+}
+
+
+
+
+.main-header__main-nav-container {
+    background-color: #A0C5D3;
+    flex-direction: row;
+    flex-basis: 100%;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    order: 4;
+}
+
+.main-nav {
+    background-color: #A0C5D3;
+}
+
+.main-nav__list {
+    background-color: #A0C5D3;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+
+.main-nav__item {
+    text-align: center;
+}
+
+.main-nav__link {
+    display: block;
+    background-color: #F7BE8F;
+    padding: .8em .7em;
+    color: #264653;
+    font-size: .9em;
+    text-decoration: none;
+    transition: .5s;
+    // order: 4;
+    
+    @media (min-width: 768px) {
+        background-color: #A0C5D3;
+        padding: 2.4em 3.6em;
+        font-weight: 500;
+    }
+}
+
+.main-nav__link:hover,
+.main-nav__link:focus {
+    background-color: #F4A261;
+    outline: none;
+
+    @media (min-width: 768px) {
+        background-color: #67A2B9;
+    }
+}
+
+
+
+@media (min-width: 425px) {
+    
+    .main-header__main-nav-container { 
+        flex-direction: row;
+        order: 4;
+    }
+
+    .main-header__search-form-container {
+        flex-shrink: 1;
+        order: 1;
+    }
+
+    .main-header__cart-button-container {
+        order: 3;
+    }
+}
+
+
+
+@media (min-width: 768px) {
+
+    .main-header__logo-container {
+        flex-basis: 20%;
+    }
+
+    .main-header__search-form-container {
+        flex-shrink: 1;
+        order: 1;
+    }
+
+    .main-header__cart-button-container {
+        order: 3;
+    }
+
+    .main-header__hamburger-button-container {
+        display: none;
+    }
+
+    .main-header__main-nav-container {
+        flex-basis: auto; 
+        flex-direction: row;
+        order: 2;
+        position: initial;
+        width: auto;
+        flex: 2;
+    }
+    
+    .main-nav {
+        width: 100%;
+    }
+    .main-nav__list {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100%;
+    }
+    
+    .main-nav__item {
+        align-self: center;
+        // float: left;
+        flex: 1;
+    }
+
+    .main-nav__link {
+        flex-direction: row;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+
+
+
+@media (min-width: 1024px) {
+
+    .main-header__logo-container {
+        flex-basis: 20%;
+    }
+
+    .main-header__search-form-container {
+        flex-shrink: 1;
+        order: 1;
+    }
+
+    .main-header__cart-button-container {
+        order: 3;
+    }
+
+    .main-header__main-nav-container {
+        display: flex;
+        flex-direction: row;
+        order: 2;
+    }
+
+    .main-nav__list {
+        flex-direction: row;
+    }
+
+    .main-nav__link {
+        flex-direction: row;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}

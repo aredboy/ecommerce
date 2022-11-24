@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://kit.fontawesome.com/486928d6d1.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <input type="checkbox" class="main-nav-toggle" id="main-nav-toggle">
+    <header class="main-header">
+        <div class="main-header__logo-container">
+            <img src="./img/logo.png" alt="logo" class="logo">
+        </div>
+        <div class="main-header__search-form-container">
+            <form id="search-form" name="search" action="/products" method="get" autocomplete="off">
+                <div class="search-input-container">
+                    <input class="search-input" placeholder="Buscar" name="search" type="search">
+                    <button type="submit" class="search-button">
+                        <img src="./img/search.png" alt="botón de búsqueda" class="search-button-img">
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="main-header__cart-button-container">
+            <a class="cart-button">
+                <span>
+                    <img class="cart-button-image" alt="carrito de compras" src="./img/cart.png">
+                </span>
+            </a>
+            <div class="cart-modal__content">
+                <i class="fa-regular fa-solid fa-xmark cart-modal__close"></i>
+                <span class="cart-modal__total">Total</span>
+                <span class="cart-modal__price">$ 0</span>
+                <button class="cart-modal__buy">Comprar</button>
+                <div class="cart-modal__back"></div>
+            </div>
+        </div>
+
+        <div class="main-header__hamburger-button-container">
+            <label class="hamburger-button" for="main-nav-toggle" title="Alternar la barra de navegación">
+                <span class="hamburger-button__top-bread"></span>
+                <span class="hamburger-button__meat"></span>
+                <span class="hamburger-button__bottom-bread"></span>
+            </label>
+        </div>
+        <div class="main-header__main-nav-container">
+            <nav class="main-nav">
+                <ul class="main-nav__list">
+                    <li class="main-nav__item">
+                        <a href="#/inicio" class="main-nav__link">Inicio</a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="#/alta" class="main-nav__link">Alta</a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="#/contacto" class="main-nav__link">Contacto</a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="#/nosotros" class="main-nav__link">Nosotros</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+
+    <main>
+
+    </main>
+
+    <footer class="main-footer">
+        <ul class="main-footer__list">
+            <li class="main-footer__titles"><a href="#" class="main-footer__links">Términos y condiciones</a></li>
+            <li class="main-footer__titles"><a href="#" class="main-footer__links">Plazos y costos de entrega</a></li>
+            <li class="main-footer__titles"><a href="#" class="main-footer__links">Promociones</a></li>
+            <li class="main-footer__titles"><a href="#" class="main-footer__links">Reclamos</a></li>
+        </ul>
+
+
+        <div class="payment-logo-container">
+            <h3 class="main-footer__payment-title">Medios de Pago</h3>
+            <ul class="payment-logo-list">
+                <li class="logo__payment">
+                    <img src="./img/logo-americanExpress.png" alt="Logo American Express" class="logo__payment-img">
+                </li>
+                <li class="logo__payment">
+                    <img src="./img/logo-mercadopago.png" alt="Logo Mercadopago" class="logo__payment-img">
+                </li>
+                <li class="logo__payment">
+                    <img src="./img/logo-visa.png" alt="Logo Visa" class="logo__payment-img">
+                </li>
+                <li class="logo__payment">
+                    <img src="./img/logo-cace.png" alt="Logo CACE" class="logo__payment-img">
+                </li>
+                <li class="logo__payment">
+                    <a href="https://secure.vtex.com/" class="logo__payment-link">
+                        <span>
+                            <img src="./img/pci_vtex_certified.png" alt="Logo Vitex" class="logo__payment-img"></span>
+                    </a>
+                </li>
+                <li class="logo__payment">
+                    <a href="https://www.afip.gob.ar/landing/default.asp" class="logo__payment-link">
+                        <span>
+                            <img src="./img/logo-dataFiscal.png" alt="Logo AFIP" class="logo__payment-img"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <p class="main-footer__copyright">Cpyright © 2022. Juguetería Cósmica S.A. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="./js/main.js" type="module"></script>
+
+
+</body>
+
+</html>

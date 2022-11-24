@@ -1,0 +1,30 @@
+.message-container {
+    position: fixed;
+    padding: 25px;
+    border-radius: 10px;
+    color: white;
+    z-index: 70;
+    
+    @media (min-width: 768px) {
+        // top: 50%;
+        min-width: 100%;
+    }
+    
+    &__success {
+        bottom: 0;
+        background-color: #31c7b5;
+
+        @media (min-width: 768px) {
+            border-radius: 0;
+            bottom: 0;
+            z-index: 120;
+        }
+    }
+
+    &__eliminated {
+        background-color: #df5059;
+        z-index: 120;
+        left: 0;
+        bottom: 0;
+    }
+}

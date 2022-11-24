@@ -1,0 +1,30 @@
+
+// 1. Configuration and helpers
+
+// 2. Vendors
+
+// 3. Base stuff
+@use 'base/base';
+@use 'base/reset';
+@use 'base/typographies';
+
+// 4. Components
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/cart-modal';
+@use 'components/error-display__popup';
+@use 'components/form-buttons';
+@use 'components/input-group';
+@use 'components/cart-toy';
+@use 'components/message';
+
+// 5. Layout-related sections
+@use 'layout/footer';
+@use 'layout/form-container';
+@use 'layout/_header';
+
+// 6. Page-specific styles
+@use 'pages/_nosotros';
+
+// 7. Themes
+

@@ -1,0 +1,118 @@
+
+    <div class="form-container">
+        <form action="post" class="main-form" autocomplete="off">
+            <div class="main-form-name">
+                <div class="input-group">
+                    <label for="first-name" class="input-group__label">
+                        Nombre:<sup>&ast;</sup>
+                    </label>
+                    <input id="first-name" class="input-group__input" type="text" required>
+                </div>
+                <div class="input-group">
+                    <label for="brand" class="input-group__label">
+                        Marca:
+                    </label>
+                    <input id="brand" class="input-group__input" type="text">
+                </div>
+            </div>
+
+        <div class="main-form-group">
+            <div class="input-group">
+                <label for="category" class="input-group__label">Categoría:</label>
+                <input list="categories" id="category" name="Categoría" class="input-group__input"/>
+            </div>
+
+            <div class="input-group">
+                <label for="price" class="input-group__label">
+                    Precio en $ARG:<sup>&ast;</sup>
+                </label>
+                <input id="price" class="input-group__input" type="text" required>
+            </div>
+            
+        </div>
+
+        <div class="main-form-group">
+            <div class="input-group">
+                <label class="input-group__label" for="stock">
+                    Stock:<sup>&ast;</sup>
+                </label>
+                <input class="input-group__input" type="text" name="stock" id="stock" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="short-description" class="input-group__label">
+                    Descripción Corta:<sup>&ast;</sup>
+                </label>
+                    <textarea minlength="5" maxlength="80" class="short-description" type="text" required></textarea>
+            </div>
+        </div>
+        
+        <div class="main-form-group__textarea">
+                <label id="long-description" class="input-group__label">
+                    Descripción Larga:<sup>&ast;</sup>
+                </label>
+                <textarea minlength="5" maxlength="2000" name="long-description" class="long-description" required></textarea>
+        </div>
+
+        <div class="main-form-age">
+            <div class="input-group">
+                <p class="input-group__type">
+                    Edad:<sup>&ast;</sup>
+                </p>
+                <div class="input-group-agetype">
+                    <input type="radio" name="age-type" value="months" id="meses" class="input-group__input-agetype">
+                    <label for="months" class="input-group__label-agetype">
+                        Meses
+                    </label>
+                    <input type="radio" name="age-type" value="years" id="years" class="input-group__input-agetype">
+                    <label for="años" class="input-group__label-agetype">
+                        Años
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-form-group">
+            <div class="input-group">
+                <label for="age-from" class="input-group__label">
+                    Edad Desde:<sup>&ast;</sup>
+                </label>
+                <input id="age-from" min="0" class="input-group__input-numeric" type="number" title="Elija la Edad en Meses o Años" required disabled>
+            </div>
+
+            <div class="input-group">
+                <label for="age-to" class="input-group__label">
+                    Edad Hasta:<sup>&ast;</sup>
+                </label>
+                <input id="age-to" min="0" class="input-group__input-numeric" type="number" title="Elija la Edad en Meses o Años" required disabled>
+            </div>
+        </div>
+
+        <div class="main-form-group">
+            <div class="input-group-free-shipping">
+                <input type="checkbox" name="free-shipping" value="sin-cargo" id="free-shipping" class="input-group-free-shipping__input">
+                <label for="free-shipping" class="input-group-free-shipping__label">
+                    Envío sin Cargo
+                </label>
+            </div>
+            <div class="input-group">
+                <label for="upload-image" class="input-group__label">
+                    Subir foto<sup>&ast;</sup>
+                </label>
+                <input type="file" class="input-group__input-upload-image" id="upload-image"  accept=".png, .jpg, .jpeg" required>
+            </div>
+        </div>
+    
+        <div class="form-buttons">
+            <input class="form-buttons__button" type="reset" value="Resetear">
+            <input class="form-buttons__button" type="submit" value="Enviar" data-open="form-submit">
+        </div>
+
+        </form>
+    </div>
+
+    
+<section class="section-products-table">
+    <h2>Listado de productos</h2>
+    <div class="products-table-container"></div>
+</section>
