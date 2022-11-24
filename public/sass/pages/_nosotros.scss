@@ -37,15 +37,17 @@
     transition: 1s;
 
     @media (min-width: 768px) {
-        margin: -3.5em 50% 1em 40%;
+        margin: -3.5em 40% 1em 40%;
     }
 }
 
-.fa-brands.fa-linkedin {
+.fa-brands.fa-linkedin,
+.fa-brands.fa-github {
     text-decoration: none;
     color: #F7BE8F;
     
     @media (min-width: 768px) {
         font-size: x-large;
+        margin-left: .5em;
     }
 }

@@ -46,6 +46,37 @@
             font-size: 2em;
         }
     }
+    
+    &__buy {
+        width: 100%;
+        max-width: 7em;
+        background: #03b39e;
+        border: 1px solid #03b39e;
+        border-radius: 0.7em;
+        box-shadow: rgb(0 0 0 / 10%) 1px 2px 4px;
+        color: rgb(113 64 159 / 90%);
+        cursor: pointer;
+        font: inherit;
+        font-size: 1em;
+        font-weight: 1000;
+        margin: 0 0 0 0.3em;
+        padding: 1em 1em;
+        transition: .5s;
+        
+        &:hover {
+            background-color: #B9ECE6;
+            border: 1px solid #B9ECE6;
+        }
+        &:active {
+            transform: scale(.97);
+            background-color: #008f7e;
+            border: 1px solid #008f7e;
+        }
+    
+        &:active {
+            opacity: .5;
+        }
+    }
 
     &__content {
     display: none;
@@ -61,6 +92,7 @@
     overflow-y: auto;
     max-height: 500px;
     transition: 1s;
+
 
     @media  (min-width:768px) {
         top: 190%;
@@ -85,5 +117,6 @@
         transform: translateY(-200px);
         transition: transform .2s;
     }
+
 }
 }
