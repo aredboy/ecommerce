@@ -16,5 +16,6 @@
   "author": "German Rojo",
   "license": "ISC",
   "description": "",
-  "type": "module"
+  "type": "module",
+  "engines": {"node": "16.1"}
 }
