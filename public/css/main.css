@@ -222,6 +222,7 @@ body {
   position: absolute;
   z-index: 1;
   text-decoration: none;
+  color: rgba(70, 18, 118, 0.9019607843);
   background-color: #E9C46A;
   font-size: 0.8em;
   margin: 0 0 0 0;
@@ -700,6 +701,12 @@ body {
   left: 0;
   bottom: 0;
 }
+.message-container__error {
+  background-color: #df5059;
+  z-index: 120;
+  left: 0;
+  bottom: 12em;
+}
 
 .main-footer {
   display: flex;
@@ -728,6 +735,7 @@ body {
 .main-footer__links {
   cursor: pointer;
   text-decoration: none;
+  color: rgba(70, 18, 118, 0.9019607843);
 }
 
 .main-footer__links:hover {

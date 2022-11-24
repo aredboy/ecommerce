@@ -1,36 +1,38 @@
-// 1. Initializing variables:
 class PageAlta {
+    static async init () {
 
-firstName = document.querySelector('#first-name');
-brand = document.querySelector('#brand');
-category = document.querySelector('#category')
-price = document.querySelector('#price');
-stock = document.querySelector('#stock');
-ageFrom = document.querySelector('#age-from');
-ageTo = document.querySelector('#age-to');
-form = document.querySelector('.main-form');
-ageType = '';
+// 1. Initializing variables:
+
+const firstName = document.querySelector('#first-name');
+const brand = document.querySelector('#brand');
+const category = document.querySelector('#category')
+const price = document.querySelector('#price');
+const stock = document.querySelector('#stock');
+const ageFrom = document.querySelector('#age-from');
+const ageTo = document.querySelector('#age-to');
+const form = document.querySelector('.main-form');
+let ageType = '';
 
 
-regExpFirstName = new RegExp(`^([0-9\'\\-\\_\\.\\,\\ \/\\"\\'\\¨\a-zA-ZÁÉÍÓÚÑÜáéíóúñü][0-9\'\\-\\_\\.\\,\\ \/\\"\\'\\¨\A-ZÁÉÍÓÚÑÜa-záéíóúñü]{1,40})(\\s[a-zA-ZÁÉÍÓÚÑÜáéíóúñü][A-ZÁÉÍÓÚÑÜa-záéíóúñü']{1,40}$)?$`);
-regExpBrand = new RegExp(`^([0-9\'\\-\\_\\.\\,\\ \/\\"\\'\\¨\a-zA-ZÁÉÍÓÚÑÜáéíóúñü][0-9\'\\-\\_\\.\\,\\ \/\\"\\'\\¨\A-ZÁÉÍÓÚÑÜa-záéíóúñü]{1,40})(\\s[a-zA-ZÁÉÍÓÚÑÜáéíóúñü][A-ZÁÉÍÓÚÑÜa-záéíóúñü']{1,40}$)?$`);
-regExpCategory = new RegExp(`^([0-9\'\\-\\_\\.\\,\\ \/\\"\\'\\¨\a-zA-ZÁÉÍÓÚÑÜáéíóúñü][0-9\'\\-\\_\\.\\,\\ \/\\"\\'\\¨\A-ZÁÉÍÓÚÑÜa-záéíóúñü]{1,40})(\\s[a-zA-ZÁÉÍÓÚÑÜáéíóúñü][A-ZÁÉÍÓÚÑÜa-záéíóúñü']{1,40}$)?$`);
-regExpPrice = new RegExp(`^\[0-9]+(,?)(\[0-9]{1,2})?$`);
-regExpStock = new RegExp(`^[0-9]{1,7}$`);
-regExpAgeFromM = new RegExp(`^([0-9]|[1-2][0-9])$`);
-regExpAgeFromY = new RegExp(`^([0-9]|[1-1][0-8])$`);
-regExpAgeToM = new RegExp(`^([0-9]|[1-3][0-9])$`);
-regExpAgeToY = new RegExp(`^(0?[1-9]|[0-9][0-9]|[1][0-9][0-9]|200)$`);
+const regExpFirstName = new RegExp(`^([0-9\'\\-\\_\\.\\,\\ \/\\"\\'\\¨\a-zA-ZÁÉÍÓÚÑÜáéíóúñü][0-9\'\\-\\_\\.\\,\\ \/\\"\\'\\¨\A-ZÁÉÍÓÚÑÜa-záéíóúñü]{1,40})(\\s[a-zA-ZÁÉÍÓÚÑÜáéíóúñü][A-ZÁÉÍÓÚÑÜa-záéíóúñü']{1,40}$)?$`);
+const regExpBrand = new RegExp(`^([0-9\'\\-\\_\\.\\,\\ \/\\"\\'\\¨\a-zA-ZÁÉÍÓÚÑÜáéíóúñü][0-9\'\\-\\_\\.\\,\\ \/\\"\\'\\¨\A-ZÁÉÍÓÚÑÜa-záéíóúñü]{1,40})(\\s[a-zA-ZÁÉÍÓÚÑÜáéíóúñü][A-ZÁÉÍÓÚÑÜa-záéíóúñü']{1,40}$)?$`);
+const regExpCategory = new RegExp(`^([0-9\'\\-\\_\\.\\,\\ \/\\"\\'\\¨\a-zA-ZÁÉÍÓÚÑÜáéíóúñü][0-9\'\\-\\_\\.\\,\\ \/\\"\\'\\¨\A-ZÁÉÍÓÚÑÜa-záéíóúñü]{1,40})(\\s[a-zA-ZÁÉÍÓÚÑÜáéíóúñü][A-ZÁÉÍÓÚÑÜa-záéíóúñü']{1,40}$)?$`);
+const regExpPrice = new RegExp(`^\[0-9]+(,?)(\[0-9]{1,2})?$`);
+const regExpStock = new RegExp(`^[0-9]{1,7}$`);
+const regExpAgeFromM = new RegExp(`^([0-9]|[1-2][0-9])$`);
+const regExpAgeFromY = new RegExp(`^([0-9]|[1-1][0-8])$`);
+const regExpAgeToM = new RegExp(`^([0-9]|[1-3][0-9])$`);
+const regExpAgeToY = new RegExp(`^(0?[1-9]|[0-9][0-9]|[1][0-9][0-9]|200)$`);
 
 
 
 // 2. Core functions:
 
-validation(value, regExp) {
+function validation(value, regExp) {
     return regExp.test(value)
 }
 
-clearInput(e) {
+function clearInput(e) {
     if(e.target.value === ''){
         e.target.style.backgroundImage = "none";
         e.target.style.backgroundColor = '#202225';
@@ -39,18 +41,18 @@ clearInput(e) {
     } return false
 }
 
-createError (msg) {
+function createError (msg) {
     let error = new Error(msg);
     error.name = '';
     error.popup = '';
     return error
 }
 
-trimValue (ev) {
+function trimValue (ev) {
     ev.target.value = ev.target.value.trim();
 }
 
-displayWarningError (ev, err) {
+function displayWarningError (ev, err) {
     let divError = document.createElement('div');
     divError.classList.add('error-display__popup');
     divError.innerHTML = err.message;
@@ -60,7 +62,7 @@ displayWarningError (ev, err) {
 }
 
 
-displayCheckOnInput (ev) {
+function displayCheckOnInput (ev) {
     ev.target.style.background='url(./img/check.svg) no-repeat right';
     ev.target.style.backgroundColor = '#2F5767';
     ev.target.style.backgroundSize = '1.2em';
@@ -68,7 +70,7 @@ displayCheckOnInput (ev) {
 }
 
 
-modifyInputBackgroundOnError(e) {
+function modifyInputBackgroundOnError(e) {
     e.target.style.backgroundColor= '#d63c40';
     e.target.style.backgroundImage = "none";
 }
@@ -76,7 +78,7 @@ modifyInputBackgroundOnError(e) {
 
 // 3. Adding Events
 
-falseValidation = document.querySelectorAll('.input-group__input-agetype').forEach(inputAge => {
+const falseValidation = document.querySelectorAll('.input-group__input-agetype').forEach(inputAge => {
     inputAge.addEventListener('change',  e => {
         ageType = e.target;
         ageFrom.disabled = false;
@@ -95,7 +97,7 @@ falseValidation = document.querySelectorAll('.input-group__input-agetype').forEa
 
 
 
-firstNameChange = firstName.addEventListener('change', e =>{
+const firstNameChange = firstName.addEventListener('change', e =>{
     if(clearInput(e)){return}
     trimValue(e);
     if(validation(e.target.value, regExpFirstName) || (e.target.value === '')){
@@ -108,7 +110,7 @@ firstNameChange = firstName.addEventListener('change', e =>{
         }
 })
 
-brandChange = brand.addEventListener('change', e =>{
+const brandChange = brand.addEventListener('change', e =>{
     if(clearInput(e)){return}
     trimValue(e);
     if(validation(e.target.value, regExpBrand) || (e.target.value === '')){
@@ -121,7 +123,7 @@ brandChange = brand.addEventListener('change', e =>{
         }
     })
     
-    categoryChange = category.addEventListener('change', e =>{
+    const categoryChange = category.addEventListener('change', e =>{
     if(clearInput(e)){return}
     trimValue(e);
     if(validation(e.target.value, regExpCategory) || (e.target.value === '')){
@@ -134,7 +136,7 @@ brandChange = brand.addEventListener('change', e =>{
         }
     })
     
-    priceChange = price.addEventListener('change', e =>{
+    const priceChange = price.addEventListener('change', e =>{
     if(clearInput(e)){return}
     trimValue(e);
     if(validation(e.target.value, regExpPrice || (e.target.value === ''))){
@@ -146,7 +148,7 @@ brandChange = brand.addEventListener('change', e =>{
     }
 })
 
-stockChange = stock.addEventListener('change', e =>{
+const stockChange = stock.addEventListener('change', e =>{
     if(clearInput(e)){return}
     trimValue(e);
     if(validation(e.target.value, regExpStock || (e.target.value === ''))){
@@ -158,7 +160,7 @@ stockChange = stock.addEventListener('change', e =>{
     }
 })
 
-ageFromFormula = ageFrom.addEventListener('change', e => {
+const ageFromFormula = ageFrom.addEventListener('change', e => {
     if(clearInput(e)){return}
     trimValue(e);
     let validated;
@@ -177,7 +179,7 @@ ageFromFormula = ageFrom.addEventListener('change', e => {
     }
 })
 
-ageToFormula = ageTo.addEventListener('change', e => {
+const ageToFormula = ageTo.addEventListener('change', e => {
     if(clearInput(e)){return}
     trimValue(e);
     let validated;
@@ -196,23 +198,37 @@ ageToFormula = ageTo.addEventListener('change', e => {
     }
 })
 
-formSubmit = form.addEventListener('submit', e => {
+const formSubmit = form.addEventListener('submit', e => {
     const inputs = e.target.querySelectorAll('.input-group__input');
+    const inputsNum = e.target.querySelectorAll('.input-group__input-numeric');
+    
     let errors = false;
-        inputs.forEach(input => {
-            if (input.style.backgroundColor === 'rgb(214, 60, 64)') {
-                errors = true;}
-            }
-        )
+    inputs.forEach(input => {
+        if (input.style.backgroundColor === 'rgb(214, 60, 64)') {
+            errors = true;}
+        }
+    )
+    inputsNum.forEach(input => {
+        if (input.style.backgroundColor === 'rgb(214, 60, 64)') {
+            errors = true;}
+    })
     if (errors) {
         e.preventDefault();
-        let error = createError('Por favor, corrija los errores antes de enviar el formulario.');
-        alert(error.message);
-        }
+        const toyRemovedFromCartWindow = document.createElement("div");
+        toyRemovedFromCartWindow.classList.add("message-container--error");
+        toyRemovedFromCartWindow.innerHTML = `
+            <div class="message-container message-container__error">
+                <p class="message-container__text">Por favor, corrija los errores antes de enviar el formulario.</p>
+            </div>`;
+        document.body.insertAdjacentElement("afterbegin", toyRemovedFromCartWindow);
+        setTimeout(() => {
+            toyRemovedFromCartWindow.remove();
+        }, 2200);
+    }
     }
 )
 
-formReset = form.addEventListener('reset', e => {
+const formReset = form.addEventListener('reset', e => {
     const inputs = e.target.querySelectorAll('.input-group__input');
         inputs.forEach(input => {
             input.style.backgroundColor = '';
@@ -227,6 +243,12 @@ formReset = form.addEventListener('reset', e => {
         )
     }      
 )
+/// Table
+
+
 }
+}
+
+
 
 export default PageAlta;
